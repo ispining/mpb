@@ -442,7 +442,7 @@ class Post:
                 p.post_id = i[0]
                 p.ad_id = i[1]
                 p.group_id = i[2]
-                p.post_time = datetime.datetime.strftime(i[3], "%Y-%m-%d %H:%M:%S")
+                p.post_time = datetime.datetime.strptime(i[3], "%Y-%m-%d %H:%M:%S")
                 r.append(p)
             r.sort(key=lambda x: x.post_time, reverse=True)
             return r
