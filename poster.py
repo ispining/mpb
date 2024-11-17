@@ -1,6 +1,5 @@
 import random
 import time
-
 from src.connections import *
 from src.models import *
 
@@ -9,13 +8,6 @@ groups = [
     {"id": -1001334146855, "lang": "ru"},
     {"id": -1001388700521, "lang": "en"}
 ]
-
-ad_photo = {
-    "24001": "AgACAgEAAxkBAANpZzkQay6RSyhIoVB0q0tSOReFXBgAAl2vMRsWIMlFxEb1lZ2lbukBAAMCAAN5AAM2BA",
-    "24002": "AgACAgEAAxkBAANqZzkRAZHIfjEPz0tao2-hyhOAFmgAAl6vMRsWIMlFshW9umdjIYMBAAMCAAN5AAM2BA",
-    "24003": "AgACAgEAAxkBAAN-Zzkap_sO-8RNYi6WMj-hYwaik2sAAmKvMRsWIMlFoHhu2v5cSF8BAAMCAAN5AAM2BA",
-    "24004": "AgACAgEAAxkBAAN_ZzkateSKbev-lNK0j3_N7hj7THMAAmOvMRsWIMlFx4uvYIgKgkMBAAMCAAN5AAM2BA"
-}
 
 while True:
     for group in groups:
@@ -67,7 +59,7 @@ while True:
                     k.row(btn(texts.Button.whatsapp[group["lang"]], url=f"https://wa.me/972504834744"),
                           btn(texts.Button.more_jobs[group["lang"]], url=f"https://t.me/MorLogisticsBot"))
                     k.row(btn(texts.Button.agent_on_telegram[group["lang"]], url=f"https://t.me/MorLogistics"))
-                    bot.send_photo(group["id"], photo, caption=work.description, reply_markup=k, disable_notification=True)
+                    bot.send_photo(group["id"], photo, caption=msg, reply_markup=k, disable_notification=True)
 
                     print("[+]", "Post sent:", datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
                     print("[+]", "Group:", group["id"])
