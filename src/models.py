@@ -1,3 +1,5 @@
+import random
+
 from src.connections import Database, btn, DEBUG
 from src import texts
 import datetime
@@ -454,7 +456,7 @@ class Post:
     def add(self):
         with Database() as (db, sql):
             sql.execute(f"""INSERT INTO posts VALUES (
-            '{str(self.post_id)}',
+            '{str(random.randint(1, 9999999999))}',
             '{str(self.ad_id)}',
             '{str(self.group_id)}',
             '{str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))}')""")
