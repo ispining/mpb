@@ -5,9 +5,9 @@ from src.connections import *
 from src.models import *
 
 groups = [
-    {"id": "", "lang": "he"},
-    {"id": "", "lang": "ru"},
-    {"id": "", "lang": "en"}
+    {"id": -1001300356812, "lang": "he"},
+    {"id": -1001334146855, "lang": "ru"},
+    {"id": -1001388700521, "lang": "en"}
 ]
 
 ad_photo = {
@@ -67,7 +67,7 @@ while True:
                     k.row(btn(texts.Button.whatsapp[group["lang"]], url=f"https://wa.me/972504834744"),
                           btn(texts.Button.more_jobs[group["lang"]], url=f"https://t.me/MorLogisticsBot"))
                     k.row(btn(texts.Button.agent_on_telegram[group["lang"]], url=f"https://t.me/MorLogistics"))
-                    bot.send_photo(group["id"], photo, caption=work.description, reply_markup=k)
+                    bot.send_photo(group["id"], photo, caption=work.description, reply_markup=k, disable_notification=True)
 
                     print("[+]", "Post sent:", datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
                     print("[+]", "Group:", group["id"])
