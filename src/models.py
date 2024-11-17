@@ -450,8 +450,12 @@ class Post:
             return r
 
     def last_message_time(self):
-        last_message = self.get_all()[0]
-        return last_message.post_time
+        getall = self.get_all()
+        if len(getall) > 0:
+            last_message = self.get_all()[0]
+            return last_message.post_time
+        else:
+            return  datetime.datetime.strptime("2024-01-01 00:00:00", "%Y-%m-%d %H:%M:%S")
 
     def add(self):
         with Database() as (db, sql):
